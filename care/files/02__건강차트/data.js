@@ -1,7 +1,0 @@
-﻿$axure.loadCurrentPage(
-(function() {
-    var _ = function() { var r={},a=arguments; for(var i=0; i<a.length; i+=2) r[a[i]]=a[i+1]; return r; }
-    var _creator = function() { return _(b,c,d,e,f,g,h,g,i,_(j,k),l,[m],n,_(o,p,q,r,s,t,u,_(),v,_(w,x,y,z,A,_(B,C,D,E),F,null,G,z,H,z,I,J,K,null,L,M,N,O,P,Q,R,M),S,_(),T,_(U,_(V,W,X,[_(V,Y,Z,g,ba,[_(bb,bc,V,bd,be,_(bf,bg,bh,[])),_(bb,bi,V,bj,bk,[])])])),bl,_(bm,[])),bn,_(),bo,_());}; 
-var b="url",c="02__건강차트.html",d="generationDate",e=new Date(1510314302086.67),f="isCanvasEnabled",g=false,h="isAdaptiveEnabled",i="sketchKeys",j="",k="s0",l="variables",m="OnLoadVariable",n="page",o="packageId",p="1483a95550f043a8990b67b74c5d2134",q="type",r="Axure:Page",s="name",t="02. 건강차트",u="notes",v="style",w="baseStyle",x="627587b6038d43cca051c114ac41ad32",y="pageAlignment",z="near",A="fill",B="fillType",C="solid",D="color",E=0xFFFFFFFF,F="image",G="imageHorizontalAlignment",H="imageVerticalAlignment",I="imageRepeat",J="auto",K="favicon",L="sketchFactor",M="0",N="colorStyle",O="appliedColor",P="fontName",Q="Applied Font",R="borderWidth",S="adaptiveStyles",T="interactionMap",U="onLoad",V="description",W="OnPageLoad",X="cases",Y="Case 1",Z="isNewIfGroup",ba="actions",bb="action",bc="setFunction",bd="Set is selected of Unidentified equal to &quot;true&quot;, and<br> is selected of Unidentified equal to &quot;true&quot;",be="expr",bf="exprType",bg="block",bh="subExprs",bi="setPanelState",bj="Set Panel to State",bk="panelsToStates",bl="diagram",bm="objects",bn="masters",bo="objectPaths";
-return _creator();
-})());
