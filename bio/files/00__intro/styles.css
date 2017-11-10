@@ -1,0 +1,125 @@
+﻿body {
+  margin:0px;
+  background-image:url('../../images/00__intro/bg.png');
+  background-position:left top;
+  background-repeat:no-repeat;
+  background-attachment:scroll;
+  background-size:1300px 1035px;
+  position:static;
+  left:auto;
+  width:1149px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u117_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:861px;
+  height:120px;
+}
+#u117 {
+  border-width:0px;
+  position:absolute;
+  left:218px;
+  top:390px;
+  width:860px;
+  height:119px;
+  font-family:'ComicSansMS-Bold', 'Comic Sans MS Bold', 'Comic Sans MS';
+  font-weight:700;
+  font-style:normal;
+  font-size:85px;
+  text-align:center;
+}
+#u117_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:860px;
+  word-wrap:break-word;
+}
+#u118_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:341px;
+  height:16px;
+}
+#u118 {
+  border-width:0px;
+  position:absolute;
+  left:809px;
+  top:150px;
+  width:340px;
+  height:15px;
+  font-family:'굴림';
+  font-weight:700;
+  font-style:normal;
+  text-align:center;
+}
+#u118_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  word-wrap:break-word;
+}
+#u119_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:158px;
+  height:52px;
+}
+#u119 {
+  border-width:0px;
+  position:absolute;
+  left:150px;
+  top:813px;
+  width:158px;
+  height:52px;
+}
+#u119_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u120_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:245px;
+  height:52px;
+}
+#u120 {
+  border-width:0px;
+  position:absolute;
+  left:893px;
+  top:813px;
+  width:245px;
+  height:52px;
+}
+#u120_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}

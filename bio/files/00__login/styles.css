@@ -1,0 +1,402 @@
+﻿body {
+  margin:0px;
+  background-image:url('../../images/00__intro/bg.png');
+  background-position:left top;
+  background-repeat:no-repeat;
+  background-attachment:scroll;
+  background-size:1300px 1035px;
+  position:static;
+  left:auto;
+  width:1149px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u121_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:361px;
+  height:231px;
+}
+#u121 {
+  border-width:0px;
+  position:absolute;
+  left:776px;
+  top:230px;
+  width:360px;
+  height:230px;
+}
+#u121_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u122 {
+  border-width:0px;
+  position:absolute;
+  left:796px;
+  top:276px;
+  width:320px;
+  height:35px;
+}
+#u122_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:320px;
+  height:35px;
+  font-family:'굴림';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+#u123 {
+  border-width:0px;
+  position:absolute;
+  left:796px;
+  top:326px;
+  width:320px;
+  height:35px;
+}
+#u123_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:320px;
+  height:35px;
+  font-family:'굴림';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+#u124_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:81px;
+  height:16px;
+}
+#u124 {
+  border-width:0px;
+  position:absolute;
+  left:796px;
+  top:245px;
+  width:80px;
+  height:15px;
+  font-family:'맑은 고딕';
+  font-weight:700;
+  font-style:normal;
+}
+#u124_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:80px;
+  word-wrap:break-word;
+}
+#u125_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:165px;
+  height:26px;
+}
+#u125 {
+  border-width:0px;
+  position:absolute;
+  left:796px;
+  top:485px;
+  width:164px;
+  height:25px;
+  font-size:11px;
+}
+#u125_text {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:6px;
+  width:160px;
+  word-wrap:break-word;
+}
+#u126_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:147px;
+  height:26px;
+}
+#u126 {
+  border-width:0px;
+  position:absolute;
+  left:970px;
+  top:485px;
+  width:146px;
+  height:25px;
+  font-size:11px;
+}
+#u126_text {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:6px;
+  width:142px;
+  word-wrap:break-word;
+}
+#u127_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:85px;
+  height:28px;
+}
+#u127 {
+  border-width:0px;
+  position:absolute;
+  left:150px;
+  top:845px;
+  width:85px;
+  height:28px;
+}
+#u127_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u128_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:132px;
+  height:28px;
+}
+#u128 {
+  border-width:0px;
+  position:absolute;
+  left:1006px;
+  top:845px;
+  width:132px;
+  height:28px;
+}
+#u128_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u129 {
+  border-width:0px;
+  position:absolute;
+  left:796px;
+  top:371px;
+  width:320px;
+  height:45px;
+}
+#u129_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:320px;
+  height:45px;
+  font-family:'맑은 고딕';
+  font-weight:700;
+  font-style:normal;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:center;
+}
+#u130_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:551px;
+  height:84px;
+}
+#u130 {
+  border-width:0px;
+  position:absolute;
+  left:186px;
+  top:276px;
+  width:550px;
+  height:83px;
+  font-family:'ComicSansMS-Bold', 'Comic Sans MS Bold', 'Comic Sans MS';
+  font-weight:700;
+  font-style:normal;
+  font-size:60px;
+  text-align:center;
+}
+#u130_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:550px;
+  word-wrap:break-word;
+}
+#u131_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:361px;
+  height:81px;
+}
+#u131 {
+  border-width:0px;
+  position:absolute;
+  left:776px;
+  top:550px;
+  width:360px;
+  height:80px;
+  font-family:'Malgun Gothic';
+  font-weight:700;
+  font-style:normal;
+  font-size:15px;
+}
+#u131_text {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:30px;
+  width:356px;
+  word-wrap:break-word;
+}
+#u132_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:341px;
+  height:16px;
+}
+#u132 {
+  border-width:0px;
+  position:absolute;
+  left:809px;
+  top:150px;
+  width:340px;
+  height:15px;
+  font-family:'굴림';
+  font-weight:700;
+  font-style:normal;
+  text-align:center;
+}
+#u132_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  word-wrap:break-word;
+}
+#u133_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:341px;
+  height:31px;
+}
+#u133 {
+  border-width:0px;
+  position:absolute;
+  left:300px;
+  top:550px;
+  width:340px;
+  height:30px;
+  font-family:'맑은 고딕';
+  font-weight:700;
+  font-style:normal;
+  font-size:25px;
+  text-align:center;
+}
+#u133_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  word-wrap:break-word;
+}
+#u134_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:94px;
+  height:27px;
+}
+#u134 {
+  border-width:0px;
+  position:absolute;
+  left:1022px;
+  top:426px;
+  width:94px;
+  height:27px;
+}
+#u134_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u135_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:81px;
+  height:16px;
+}
+#u135 {
+  border-width:0px;
+  position:absolute;
+  left:932px;
+  top:432px;
+  width:80px;
+  height:15px;
+  font-family:'맑은 고딕';
+  font-weight:700;
+  font-style:normal;
+}
+#u135_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:80px;
+  word-wrap:break-word;
+}
