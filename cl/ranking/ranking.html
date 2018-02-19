@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>렌트킹</title>
+<meta property="og:url" content="https://www.rentking.co.kr">
+<meta property="og:title" content="렌트카는 렌트킹">
+<meta property="og:description" content="전국 실시간 렌트카 최저가 검색, 실시간 예약결제, 배달대여">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/css/sub.css" />
+
+<script type="text/javascript" src="http://themnj.com/js/jquery-1.8.2.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script><!-- 180207 추가 -->
+<script type="text/javascript" src="/js/custom.js"></script>
+
+<script>
+$(function(){
+	$('input[type=text]').blur(function(){
+		placeholder($(this));
+	});
+	/* //selectbox - 180207 추가 */
+	$('.tab_local a').click(function(){
+		tab_Current($(this));
+	});
+});
+</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header"></div>
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<div class="content">
+
+				<div class="tab_local">
+					<a href="#none">전국</a>
+					<a href="#none">서울/경기/인천</a>
+					<a href="#none">강원</a>
+					<a href="#none">대전/세종/충청</a>
+					<a href="#none">부산/울산/대구/경상</a>
+					<a href="#none">광주/전라</a>
+					<a href="#none">제주</a>
+				</div>
+
+				<ul class="tab type03 full_tab">
+					<li class="current"><span>인기 순위</span></li>
+					<li><span>단기대여 순위</span></li>
+					<li><span>월장기 순위</span></li>
+					<li><span>소형차 순위</span></li>
+					<li><span>중대형차 순위</span></li>
+					<li><span>수입차 순위</span></li>
+					<li><span>최신모델 순위</span></li>
+					<li><span>신차장기(년) 순위</span></li>
+					<li><span>중고장기(년)</span></li>
+				</ul>
+
+				<div class="sorting_area mt20">
+					<p class="fl txt_gray">집계기간 : 2018-00-00 ~ 2018-00-00</p>
+					<p class="fr txt_gray">대여료는  자차보험료와 배반차비용이 포함된 금액이며, 커넥터수수료는 기본 10%로 보여집니다. [마이페이지]에서 기본수수료를 변경하실 수 있습니다.</p>
+				</div>
+
+				<!-- 검색결과 -->
+				<div class="list type_result02">
+					<!-- header -->
+					<ul class="header">
+						<li>
+							<div class="rank"><span>순위</span></div>
+							<div class="model_name"><span>모델명</span></div>
+							<div class="local_spot"><span>지점/위치</span></div>
+							<div class="price"><span>월대여료</span></div>
+							<div class="fee"><span>커텍터수수료 (10%)</span></div>
+							<div class="total_price"><span>총 결제금액</span></div>
+						</li>
+					</ul>
+					<!-- //header -->
+					<!-- list -->
+					<ul class="body">
+						<!-- 리스트 루프영역 -->
+						<li>
+							<div class="rank"><span class="up">1</span></div>
+							<div class="car_info thumb">
+								<div class="small"><img src="/images/thumb/sample_01.jpg" alt="" /></div>
+								<strong>아반떼 1.6 MD 스타일 (휘발유 / 선셋레드 / 2017)</strong>
+
+								<p class="option">
+									<span>썬루프</span>
+									<span>열선시트</span>
+									<span>하이패스</span>
+									<span>네비게이션</span>
+									<span>블랙박스</span>
+									<span>후방카메라</span>
+									<span>후방센서</span>
+									<span>스마트키</span>
+									<span>블루투스만26세</span>
+									<span>면허1년 이상</span>
+									<span>금연차 / 120,000km</span>
+								</p>
+							</div>
+							<div class="local_spot">
+								카포유
+								<span class="explain">(교대역아크로비스타점 / 서울 서초구)</span>
+							</div>
+							<div class="price ar">550,000 / 월
+								<p class="explain mt05">보증금 : 300,000원</p>
+							</div>
+							<div class="fee ar">
+								<strong class="txt_blue">55,000원</strong>
+							</div>
+							<div class="total_price ar">
+								<strong class="txt_red">65,000원</strong>
+							</div>
+						</li>
+						<!-- //리스트 루프영역 -->
+						<li>
+							<div class="rank"><span class="down">2</span></div>
+							<div class="car_info thumb">
+								<div class="small"><img src="/images/thumb/sample_01.jpg" alt="" /></div>
+								<strong>아반떼 1.6 MD 스타일 (휘발유 / 선셋레드 / 2017)</strong>
+
+								<p class="option">
+									<span>썬루프</span>
+									<span>열선시트</span>
+									<span>하이패스</span>
+									<span>네비게이션</span>
+									<span>블랙박스</span>
+									<span>후방카메라</span>
+									<span>후방센서</span>
+									<span>스마트키</span>
+									<span>블루투스만26세</span>
+									<span>면허1년 이상</span>
+									<span>금연차 / 120,000km</span>
+								</p>
+							</div>
+							<div class="local_spot">
+								카포유
+								<span class="explain">(교대역아크로비스타점 / 서울 서초구)</span>
+							</div>
+							<div class="price ar">550,000 / 월
+								<p class="explain mt05">보증금 : 300,000원</p>
+							</div>
+							<div class="fee ar">
+								<strong class="txt_blue">55,000원</strong>
+							</div>
+							<div class="total_price ar">
+								<strong class="txt_red">65,000원</strong>
+							</div>
+						</li>
+						<li>
+							<div class="rank"><span>3</span></div>
+							<div class="car_info thumb">
+								<div class="small"><img src="/images/thumb/sample_01.jpg" alt="" /></div>
+								<strong>아반떼 1.6 MD 스타일 (휘발유 / 선셋레드 / 2017)</strong>
+
+								<p class="option">
+									<span>썬루프</span>
+									<span>열선시트</span>
+									<span>하이패스</span>
+									<span>네비게이션</span>
+									<span>블랙박스</span>
+									<span>후방카메라</span>
+									<span>후방센서</span>
+									<span>스마트키</span>
+									<span>블루투스만26세</span>
+									<span>면허1년 이상</span>
+									<span>금연차 / 120,000km</span>
+								</p>
+							</div>
+							<div class="local_spot">
+								카포유
+								<span class="explain">(교대역아크로비스타점 / 서울 서초구)</span>
+							</div>
+							<div class="price ar">550,000 / 월
+								<p class="explain mt05">보증금 : 300,000원</p>
+							</div>
+							<div class="fee ar">
+								<strong class="txt_blue">55,000원</strong>
+							</div>
+							<div class="total_price ar">
+								<strong class="txt_red">65,000원</strong>
+							</div>
+						</li>
+					</ul>
+					<!-- //list -->
+				</div>
+				<!-- //검색결과 -->
+			</div>
+		</div>
+		<!-- //container -->
+		<!-- footer -->
+		<div id="footer"></div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

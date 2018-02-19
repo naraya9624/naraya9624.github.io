@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Spoqa';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Spoqa Han Sans Thin'), local('Spoqa Han Sans Thin'), local('Spoqa Han Sans Thin');
+  src: url('/font/Spoqa Han Sans Thin.eot');
+  src: url('/font/Spoqa Han Sans Thin.eot?#iefix') format('embedded-opentype'),
+       url('/font/Spoqa Han Sans Thin.woff') format('woff'),
+       url('/font/Spoqa Han Sans Thin.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Spoqa Han Sans Light'), local('Spoqa Han Sans Light'), local('Spoqa Han Sans Light');
+  src: url('/font/Spoqa Han Sans Light.eot');
+  src: url('/font/Spoqa Han Sans Light.eot?#iefix') format('embedded-opentype'),
+       url('/font/Spoqa Han Sans Light.woff') format('woff'),
+       url('/font/Spoqa Han Sans Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Spoqa Han Sans Regular'), local('Spoqa Han Sans Regular'), local('Spoqa Han Sans Regular');
+  src: url('/font/Spoqa Han Sans Regular.eot');
+  src: url('/font/Spoqa Han Sans Regular.eot?#iefix') format('embedded-opentype'),
+       url('/font/Spoqa Han Sans Regular.woff') format('woff'),
+       url('/font/Spoqa Han Sans Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spoqa';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Spoqa Han Sans Bold'), local('Spoqa Han Sans Bold'), local('Spoqa Han Sans Bold');
+  src: url('/font/Spoqa Han Sans Bold.eot');
+  src: url('/font/Spoqa Han Sans Bold.eot?#iefix') format('embedded-opentype'),
+       url('/font/Spoqa Han Sans Bold.woff') format('woff'),
+       url('/font/Spoqa Han Sans Bold.otf') format('truetype');
+}
