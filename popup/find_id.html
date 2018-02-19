@@ -1,0 +1,69 @@
+<link rel="stylesheet" type="text/css" href="/css/pop_find_id.css" />
+
+<div class="layer_header">
+	<h2>아이디/비밀번호 찾기</h2>
+</div>
+<div class="layer_content">
+	<ul class="tab full_tab">
+		<li class="current">
+			<a href="#none">아이디 찾기</a>
+		</li>
+		<li>
+			<a href="#none">비밀번호 찾기</a>
+		</li>
+	</ul>
+	<!-- 아이디 찾기 -->
+	<dl class="login current">
+		<dt>이름</dt>
+		<dd class="placeholder_wrap">
+			<input type="text" id="name" name="name" />
+			<span class="placeholder">실명 입력</span>
+		</dd>
+		<dt>휴대폰 번호</dt>
+		<dd class="placeholder_wrap">
+			<input type="text" id="phone" name="phone" />
+			<span class="placeholder">'-'없이 번호만 입력</span>
+		</dd>
+	</dl>
+	<!-- //아이디 찾기 -->
+
+	<!-- 비밀번호 찾기 -->
+	<dl class="login">
+		<dt>아이디</dt>
+		<dd class="placeholder_wrap">
+			<input type="text" id="name" name="name" />
+			<span class="placeholder">아이디 입력</span>
+		</dd>
+		<dt>휴대폰 번호</dt>
+		<dd class="placeholder_wrap">
+			<input type="text" id="phone" name="phone" />
+			<span class="placeholder">'-'없이 번호만 입력</span>
+		</dd>
+	</dl>
+	<!-- //비밀번호 찾기 -->
+
+</div>
+<div class="layer_footer ac">
+	<a href="#none" onclick="popup_close(this);" class="btn_submit">확인</a>
+</div>
+
+<script>
+$(function(){
+	$('.btn_submit').click(function(){
+		setTimeout(function(){
+			popup_open('find_result');
+		}, 200);
+	});
+
+	full_tab($('.full_tab'));
+
+	$('.tab li a').click(function(){
+		$('dl').removeClass('current');
+		$('dl').eq($(this).parent().index()).addClass('current');
+	});
+	
+	$('input[type=text], input[type=password]').blur(function(){
+		placeholder($(this));
+	});
+});
+</script>

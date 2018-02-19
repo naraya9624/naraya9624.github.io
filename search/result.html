@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>렌트킹</title>
+<meta property="og:url" content="https://www.rentking.co.kr">
+<meta property="og:title" content="렌트카는 렌트킹">
+<meta property="og:description" content="전국 실시간 렌트카 최저가 검색, 실시간 예약결제, 배달대여">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/css/sub.css" />
+
+<script type="text/javascript" src="http://themnj.com/js/jquery-1.8.2.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script><!-- 180207 추가 -->
+<script type="text/javascript" src="/js/custom.js"></script>
+
+<script>
+$(function(){
+	$('input[type=text]').blur(function(){
+		placeholder($(this));
+	});
+
+	/* price filter - 180207 추가 */
+	function slideFn(){//천원단위 처리
+		$('.range_input input').eq(0).val($('.range_input input').eq(0).val().split(/(?=(?:\d{3})+(?:\.|$))/g).join(','));
+		$('.range_input input').eq(1).val($('.range_input input').eq(1).val().split(/(?=(?:\d{3})+(?:\.|$))/g).join(','));
+	}
+	function inputPrice(minP, MaxP){    
+		$(".range_filter").slider({
+			range: true,
+			min: minP,
+			max: MaxP,
+			values: [minP,MaxP],
+			slide: function(event, ui){			
+				$('.range_input input').eq(0).val(ui.values[0]);
+				$('.range_input input').eq(1).val(ui.values[1]);
+				slideFn();
+			}
+		});
+		$('.range_input input').eq(0).val($('.range_filter').slider('values',0));
+		$('.range_input input').eq(1).val($('.range_filter').slider('values',1));
+		slideFn();
+	}
+	inputPrice(100000, 1000000);
+	/* //price filter - 180207 추가 */
+	/* //selectbox - 180207 추가 */
+	$(".select_box").on("click",function(){
+		if($(this).hasClass("open")){
+			$(this).removeClass("open");
+			$(this).children("dd").hide();
+			return false;
+		}else{
+			$(".select_box").removeClass("open");
+			$(".select_box dd").hide();
+			$(this).addClass("open");
+			$(this).children("dd").show();
+			return false;
+		}
+	});
+
+	$('.select_box li a').on('click',function(){
+		$(this).closest('.select_box').find('dt a').text($(this).text());
+		$(this).closest('.select_box').find('select option').eq($(this).parent().index()).attr('selected','selected');
+	});
+	/* //selectbox - 180207 추가 */
+});
+</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header"></div>
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<div class="content">
+				<!-- detailSearch -->
+				<div class="detail_search">
+					<dl>
+						<dt>연료</dt>
+						<dd>
+							<input type="checkbox" id="gas1" name="fuel" class="type_btn" /><label for="gas1">휘발유</label>
+							<input type="checkbox" id="gas2" name="fuel" class="type_btn" /><label for="gas2">경유</label>
+							<input type="checkbox" id="gas3" name="fuel" class="type_btn" /><label for="gas3">LPG</label>
+							<input type="checkbox" id="gas4" name="fuel" class="type_btn" /><label for="gas4">하이브리드</label>
+							<input type="checkbox" id="gas5" name="fuel" class="type_btn" /><label for="gas5">전기차</label>
+						</dd>
+						<dt>옵션</dt>
+						<dd>
+							<input type="checkbox" id="option1" name="option" class="type_btn" /><label for="option1">네비게이션</label>
+							<input type="checkbox" id="option2" name="option" class="type_btn" /><label for="option2">블랙박스</label>
+							<input type="checkbox" id="option3" name="option" class="type_btn" /><label for="option3">후방센서</label>
+							<input type="checkbox" id="option4" name="option" class="type_btn" /><label for="option4">후방카메라</label>
+							<input type="checkbox" id="option5" name="option" class="type_btn" /><label for="option5">스마트키</label>
+							<input type="checkbox" id="option6" name="option" class="type_btn" /><label for="option6">블루투스</label>
+							<input type="checkbox" id="option7" name="option" class="type_btn" /><label for="option7">썬루프</label>
+							<input type="checkbox" id="option8" name="option" class="type_btn" /><label for="option8">하이패스</label>
+						</dd>
+						<dt>출고일</dt>
+						<dd>
+							<input type="checkbox" id="vintage1" name="vintage" class="type_btn" /><label for="vintage1">2018</label>
+							<input type="checkbox" id="vintage2" name="vintage" class="type_btn" /><label for="vintage2">2017</label>
+							<input type="checkbox" id="vintage3" name="vintage" class="type_btn" /><label for="vintage3">2016</label>
+							<input type="checkbox" id="vintage4" name="vintage" class="type_btn" /><label for="vintage4">2015~</label>
+						</dd>
+						<dt>색상</dt>
+						<dd>
+							<input type="checkbox" id="color1" name="color" class="type_btn" /><label for="color1">블랙</label>
+							<input type="checkbox" id="color2" name="color" class="type_btn" /><label for="color2">화이트</label>
+							<input type="checkbox" id="color3" name="color" class="type_btn" /><label for="color3">그레이</label>
+							<input type="checkbox" id="color4" name="color" class="type_btn" /><label for="color4">쥐색</label>
+							<input type="checkbox" id="color5" name="color" class="type_btn" /><label for="color5">실버</label>
+							<input type="checkbox" id="color6" name="color" class="type_btn" /><label for="color6">기타</label>
+						</dd>
+						<dt>기타</dt>
+						<dd>
+							<span>
+								<input type="radio" id="delivery1" name="delivery" /><label for="delivery1">배달가능</label>
+								<input type="radio" id="delivery2" name="delivery" /><label for="delivery2">지점픽업</label>
+							</span>
+							<span>
+								<input type="radio" id="age1" name="age" /><label for="age1">만 21세 이상</label>
+								<input type="radio" id="age2" name="age" /><label for="age2">만 26세 이상</label>
+							</span>
+							<span>
+								<input type="radio" id="smoke" name="smoke" /><label for="smoke">금연차</label>
+							</span>
+						</dd>
+					</dl>
+					<ul>
+						<li>
+							<p class="placeholder_wrap">
+								<input type="text" id="" name="" class="model_search" /><span class="placeholder">모델명 검색</span>
+							</p>
+						</li>
+						<li>
+							<!-- range 180207 추가 -->
+							<div class="range_sort">
+								<div class="range_input">
+									<span>대여료</span>
+									<input type="text" id="" name="" title="최소값" />
+									<div class="range_filter">
+										<div class="border"></div>
+									</div>
+									<input type="text" id="" name="" title="최대값" />
+								</div>
+							</div>
+							<!-- //range -->
+						</li>
+					</ul>
+					<a href="#none" class="option_reset">옵션 초기화</a>
+				</div>
+				<!-- //detailSearch -->
+
+				<!-- 주행거리 sorting -->
+				<div class="sorting_area">
+					<ul class="range">
+						<li>
+							<input type="radio" id="" name="" checked="checked" /><label>3km</label>
+						</li>
+						<li>
+							<input type="radio" id="range01" name="range" /><label for="range01">3km</label>
+						</li>
+						<li>
+							<input type="radio" id="range02" name="range" /><label for="range02">3km</label>
+						</li>
+						<li>
+							<input type="radio" id="" name="" /><label>3km</label>
+						</li>
+						<li>
+							<input type="radio" id="" name="" /><label>3km</label>
+						</li>
+					</ul>
+					<div class="explain">단기대여시 차량이 지점 사정에 따라 동급 또는 상위급 차량으로 교체 될 수 있습니다. (단, 월렌트 이상은 선택 차량 보장하며, 불가피할 경우 고객에게 통보해 드립니다.)</div>
+				</div>
+				<!-- //주행거리 sorting -->
+
+				<!-- 차종 탭 -->
+				<ul class="tab type01 full_tab">
+					<li class="current">
+						<span>전체(158)</span>
+						89,000~
+					</li>
+					<li>
+						<span>소형(76)</span>
+						89,000~
+					</li>
+					<li>
+						<span>중형(54)</span>
+						89,000~
+					</li>
+					<li>
+						<span>대형(12)</span>
+						89,000~
+					</li>
+					<li>
+						<span>SUV(54)</span>
+						89,000~
+					</li>
+					<li>
+						<span>승합(12)</span>
+						89,000~
+					</li>
+					<li>
+						<span>수입(54)</span>
+						89,000~
+					</li>
+				</ul>
+				<!-- //차종 탭 -->
+
+				<!-- 지역 sorting -->
+				<div class="sorting_area">
+					<ul class="local">
+						<li class="current"><a href="#none">전체(158)</a></li>
+						<li><a href="#none">서울 동대문구(34)</a></li>
+						<li><a href="#none">서울 강북구(158)</a></li>
+						<li><a href="#none">서울 서초구(158)</a></li>
+					</ul>
+					<div class="fee">
+						<div class="fl">
+							<span class="tooTip_area">
+								<span class="help help_front" onclick="javascript:toolTip_open('toolTip_fee');">수수료</span>
+								<!-- tooltip -->
+								<div class="tooltip_wrap toolTip_fee">
+									<strong class="title">수수료</strong>
+									<div class="tooltip_inner">수수료는 커넥터께 지급되는 금액(매출)으로, 차량 대여시 총 결제금액에 포함되며, 매월 정산일자에 합산하여 입금해드립니다.기본값으로 10%로 계산되어 보여지며, 각 차량별로 직접 입력하실 수 있습니다.</div>
+									<a href="#none" onclick="javascript:toolTip_close('toolTip_fee');" class="btn_close">닫기</a>
+								</div>
+								<!-- //tooltip --> 
+							</span>
+							<input type="number" id="" name="" class="rate" /> % <a href="#none" class="all_apply">일괄적용</a>
+						</div>
+						
+						<dl class="fr select_box">
+							<dt><a href="#none">대여료 낮음</a></dt><!-- a태그 추가 - 180207수정 -->
+							<dd>
+								<!-- select 추가 - 180208 -->
+								<select>
+									<option>대여료 낮음</option>
+									<option>대여료 높음</option>
+									<option>최근 연식</option>
+									<option>짧은 주행거리</option>
+									<option>옵션 많은 순</option>
+									<option>모델명 순</option>
+								</select>
+								<!-- //select 추가 - 180208 -->
+								<ul>
+									<li><a href="#none">대여료 낮음</a></li>
+									<li><a href="#none">대여료 높음</a></li>
+									<li><a href="#none">최근 연식</a></li>
+									<li><a href="#none">짧은 주행거리</a></li>
+									<li><a href="#none">옵션 많은 순</a></li>
+									<li><a href="#none">모델명 순</a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- //지역거리 sorting -->
+
+				<!-- 검색결과 -->
+				<div class="list type_result">
+					<!-- header -->
+					<ul class="header">
+						<li>
+							<div class="car_info"><span>차량정보</span></div>
+							<div class="price"><span>대여료</span></div>
+							<div class="deposit toolTip_area"><span class=" help help_back" onclick="javascript:toolTip_open('toolTip_deposit');">보증금</span>
+								<!-- tooltip -->
+								<div class="tooltip_wrap toolTip_deposit">
+									<strong class="title">보증금 안내</strong>
+									<div class="tooltip_inner">월장기 대여에서는 운전자의 무리한 운행을 예방하기 위하여 보증금제도를 도입하여 사용하고 있습니다. 보증금은 대여가끝나면 되돌려 드리는 금액으로 카드결제시 수수료 문제가발생하게되어 부득이하게 지점에서 직접 현금(계좌이체)를 통해 받고 있습니다.</div>
+									<a href="#none" onclick="javascript:toolTip_close('toolTip_deposit');" class="btn_close">닫기</a>
+								</div>
+								<!-- //tooltip -->
+							</div>
+							<div class="insurance"><span>자차보험료</span></div>
+							<div class="rental"><span>대여방법</span></div>
+							<div class="fee"><span>수수료</span></div>
+							<div class="total"><span>총 결제금액</span></div>
+						</li>
+					</ul>
+					<!-- //header -->
+					<!-- list -->
+					<ul class="body">
+						<!-- 리스트 루프영역 -->
+						<li>
+							<div class="car_info thumb">
+								<div><img src="/images/thumb/sample_01.jpg" alt="" /></div>
+								<strong>아우디 A6 3.0 TDI Q<span>경유/선셋레드</span></strong>
+
+								<span class="info">2016년 / 80,000km (XX허 1234)</span>
+								<p class="option">
+									<span>썬루프</span>
+									<span>열선시트</span>
+									<span>하이패스</span>
+									<span>네비게이션</span>
+									<span>블랙박스</span>
+									<span>후방카메라</span>
+									<span>후방센서</span>
+									<span>스마트키</span>
+									<span>블루투스</span>
+									<span>만26세</span>
+									<span>면허1년 이상</span>
+									<span>금연차</span>
+								</p>
+								<strong class="company">카포유(한성대입구역점/서울 성북구)<span>배달가능</span></strong>
+							</div>
+							<div class="price">
+								3,000,000원
+								<span class="explain">(3,500km/월, 100원/1km 추가)</span>
+							</div>
+							<div class="deposit">1,200,000원</div>
+							<div class="insurance">
+								포함
+								<span class="explain">(면책 200만원)</span>
+							</div>
+							<div class="rental">
+								<p>
+									<input type="radio" id="delivery11-1" name="delivery1" checked="checked" /><label for="delivery11-1">배달대여(무료)</label>
+								</p>
+								<p>
+									<input type="radio" id="delivery11-2" name="delivery1" /><label for="delivery11-2">지점픽업</label>
+								</p>
+							</div>
+							<div class="fee">
+								<p>
+									<input type="radio" id="price1-1" name="price1" checked="checked" /><label for="price1-1">600,000원 / <input type="text" id="rate1" name="price1-1" class="small rate" /></label>%
+								</p>
+								<p>
+									<input type="radio" id="price1-2" name="price1" /><label for="price1-2"><input type="text" id="price" name="price1-2" class="small price" /></label>원
+								</p>
+							</div>
+							<div class="total">
+								<strong>4,300,000원</strong>
+								<a href="#none" class="btn_reserve">예약 / 결제</a>
+								<a href="#none" class="btn_cart">보관</a>
+								<a href="#none" class="btn_share">공유</a>
+							</div>
+						</li>
+						<!-- //리스트 루프영역 -->
+						<li>
+							<div class="car_info thumb">
+								<div><img src="/images/thumb/sample_01.jpg" alt="" /></div>
+								<strong>아우디 A6 3.0 TDI Q<span>경유/선셋레드</span></strong>
+
+								<span class="info">2016년 / 80,000km (XX허 1234)</span>
+								<p class="option">
+									<span>썬루프</span>
+									<span>열선시트</span>
+									<span>하이패스</span>
+									<span>네비게이션</span>
+									<span>블랙박스</span>
+									<span>후방카메라</span>
+									<span>후방센서</span>
+									<span>스마트키</span>
+									<span>블루투스</span>
+									<span>만26세</span>
+									<span>면허1년 이상</span>
+									<span>금연차</span>
+								</p>
+								<strong class="company">카포유(한성대입구역점/서울 성북구)<span>배달가능</span></strong>
+							</div>
+							<div class="price">
+								3,000,000원
+								<span class="explain">(3,500km/월, 100원/1km 추가)</span>
+							</div>
+							<div class="deposit">1,200,000원</div>
+							<div class="insurance">
+								포함
+								<span class="explain">(면책 200만원)</span>
+								<input type="checkbox" id="" name="" /><label>자차 선택</label>
+							</div>
+							<div class="rental">
+								<p>
+									<input type="radio" id="delivery11-1" name="delivery1" checked="checked" /><label for="delivery11-1">배달대여(무료)</label>
+								</p>
+								<p>
+									<input type="radio" id="delivery11-2" name="delivery1" /><label for="delivery11-2">지점픽업</label>
+								</p>
+							</div>
+							<div class="fee">
+								<p>
+									<input type="radio" id="price1-1" name="price1" checked="checked" /><label for="price1-1">600,000원 / <input type="text" id="rate1" name="price1-1" class="small rate" /></label>%
+								</p>
+								<p>
+									<input type="radio" id="price1-2" name="price1" /><label for="price1-2"><input type="text" id="price" name="price1-2" class="small price" /></label>원
+								</p>
+							</div>
+							<div class="total">
+								<strong>4,300,000원</strong>
+								<a href="#none" class="btn_reserve">예약 / 결제</a>
+								<a href="#none" class="btn_cart">보관</a>
+								<a href="#none" class="btn_share">공유</a>
+							</div>
+						</li>
+					</ul>
+					<!-- //list -->
+				</div>
+				<!-- //검색결과 -->
+			</div>
+		</div>
+		<!-- //container -->
+		<!-- footer -->
+		<div id="footer"></div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

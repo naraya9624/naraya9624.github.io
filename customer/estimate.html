@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>렌트킹</title>
+<meta property="og:url" content="https://www.rentking.co.kr">
+<meta property="og:title" content="렌트카는 렌트킹">
+<meta property="og:description" content="전국 실시간 렌트카 최저가 검색, 실시간 예약결제, 배달대여">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/css/sub.css" />
+
+<script type="text/javascript" src="http://themnj.com/js/jquery-1.8.2.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+
+<script>
+$(function(){
+	/* faq - 180209 추가 */ 
+	$(".faq dt").on("click",function(){
+		if($(this).hasClass("open")){
+			$(this).removeClass("open");
+			$(".faq dt .icon_arrow").removeClass("open");
+			$(".faq dt .icon_arrow > span").text("열기");
+			$(this).next("dd").hide();
+			return false;
+		}else{
+			$(".faq dt").removeClass("open");
+			$(this).addClass("open");
+			$(".faq dt .icon_arrow").removeClass("open");
+			$(this).find(".icon_arrow").addClass("open");
+			$(".faq dt .icon_arrow > span").text("열기");
+			$(this).find(".icon_arrow > span").text("닫기");
+			$(".faq dd").hide();			
+			$(this).next("dd").show();
+			return false;
+		}
+	});
+	/* //faq - 180209 추가 */
+	/* 첨부파일 - 180209 추가 */
+	$(".file_box .upload_file").change(function(){
+		var txt = [];
+		for(var i=0; i<this.files.length; i++){
+			txt.push(this.files[i].name);
+		}
+		$(".file_box .file_file").val(txt.join());
+	}).change();
+	/* //첨부파일 - 180209 추가 */
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header"></div>
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<div class="content">
+				<!--<div style="padding:20px; color:#ff0000; line-height:18px;">[읽어보고 수정해주세요. 그리고 이 부분은 지워주세요.]<br/>- 헤더, 비주얼, 타이틀 추가해주세요!<br />- 대여기간은 datapicker를 사용해야 할거같은데, 공통으로 사용할걸로 적용해주세요.<br/>- 파일선택는 공통인거 같은데, 다중선택되고 파일명이 노출되어야할거같아요. <a target="_blank" href="http://work.rentking.co.kr/cl/#g=1&p=07_%EC%98%88%EC%95%BD_%EA%B2%B0%EC%A0%9C_%EC%9D%BC%EA%B4%84%EC%98%88%EC%95%BD_%EB%8B%A8%EA%B8%B0_">여기를 눌러 링크확인하기</a><br/>&nbsp;&nbsp;(지금 퍼블되어있는건 다중선택은 되고, 옆에 input에 선택된 파일명이 나옵니다.) <br/>- body 배경색이 흰색이여야 합니다.</div>-->
+				<!-- form_type -->
+				<div class="form_type estimate">
+					<table summary="견적문의 - 견적분야, 대여기간, 차량모델, 대여방법, 픽업위치, 반납위치, 기타 요청 사항, 파일 첨부">
+						<colgroup>
+							<col width="106px" />
+							<col width="*" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">견적분야</th>
+								<td>
+									<ul class="list_type">
+										<li>
+											<input type="radio" id="rent01" name="part"><label for="rent01">단기렌트</label>
+										</li>
+										<li>
+											<input type="radio" id="rent02" name="part"><label for="rent02">장기렌트</label>
+										</li>
+										<li>
+											<input type="radio" id="rent03" name="part"><label for="rent03">VIP의전</label>
+										</li>
+										<li>
+											<input type="radio" id="rent04" name="part"><label for="rent04">행사/MICE</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">대여기간</th>
+								<td>
+									<input type="text" id="" name="" />
+									<input type="text" id="" name="" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">차량모델</th>
+								<td>
+									<input type="text" id="" name="" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">대여방법</th>
+								<td>
+									<ul class="list_type">
+										<li>
+											<input type="radio" id="method01" name="method"><label for="method01">지점방문</label>
+										</li>
+										<li>
+											<input type="radio" id="method02" name="method"><label for="method02">배달대여</label>
+										</li>
+										<li>
+											<input type="radio" id="method03" name="method"><label for="method03">무관</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">픽업위치</th>
+								<td>
+									<input type="text" id="" name="" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">반납위치</th>
+								<td>
+									<input type="text" id="" name="" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">기타 요청 사항</th>
+								<td>
+									<textarea name="" cols="50" rows="5"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">파일 첨부</th>
+								<td>
+									<div class="file_box">
+										<label for="upload_btn" class="btn_file">파일선택</label>
+										<input type="file" id="upload_btn" class="upload_file" multiple="multiple" name="filename[]" />
+										<input text="text" class="file_file" >
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //form_type -->
+				<div class="ac">
+					<a href="#none" class="btnB blue">등록</a>
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+		<!-- footer -->
+		<div id="footer"></div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>
